@@ -2,16 +2,20 @@
 
 <ul>
   <% @tasks.each do |task| %>
-  <% if task.completed == false %>
-    <li class="list-nostyle"><input type="checkbox" disabled="disabled"
-> <%= link_to task.title, task_path(task.id) %> </li>
-  <% else %>
-    <li class="list-nostyle"><input type="checkbox" checked="checked" disabled="disabled"
-> <%= link_to task.title, task_path(task.id) %> </li>
-  <% end %>
+    <% if task.completed == false %>
+      <li class="list-nostyle"> <input type="checkbox" disabled="disabled"><%= link_to task.title, task_path(task.id) %> <%= link_to "", task_path(task.id), method: :delete, data: { confirm: "Are you sure?" } , class: "fas fa-trash-alt" %>
+      </li>
+
+    <% else %>
+      <li class="list-nostyle">
+        <input type="checkbox" checked="checked" disabled="disabled">
+        <%= link_to task.title, task_path(task.id) %>
+        <%= link_to "", task_path(task.id), method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash-alt" %> </li>
+    <% end %>
 
   <% end %>
 </ul>
 
-
-<%= link_to 'Create a new task', tasks_new_path %>
+<div class="border-top">
+  <p><i class="fas fa-plus"> <%= link_to 'Create a new task', new_task_path %></i></p>
+</div>

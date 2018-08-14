@@ -1,15 +1,7 @@
 <h1>Update a task</h1>
 
-<%= form_for @task do |f|  %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= f.label :completed %>
-  <%= f.check_box :completed %>
-  <%= f.submit %>
+<%= render 'task_form', task: @task %>
 
-<%end %>
-
-
-<%= link_to 'Retour à ma liste de taches', tasks_path %>
+<div class="border-top">
+  <p><i class="fas fa-undo-alt"> <%= link_to 'Retour à ma liste de taches', tasks_path %></i></p>
+</div>

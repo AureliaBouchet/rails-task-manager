@@ -1,12 +1,7 @@
 <h1>Create a task</h1>
 
-<%= form_for @task do |f|  %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= f.submit %>
-<%end %>
+<%= render 'task_form', task: @task %>
 
-
-<%= link_to 'Retour à ma liste de taches', tasks_path %>
+<div class="border-top">
+  <p><%= link_to 'Retour à ma liste de taches', tasks_path %></p>
+</div>

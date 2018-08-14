@@ -2,10 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h1{
+  text-align: center;
+}
+
+li a{
+  color: #14203d;
+  text-decoration: none;
+}
+
+p a{
+  color: #14203d;
+  text-decoration: none;
+}
+
+.wrapper-grey{
+  border:solid 1px #d1d1d1;
+  border-radius: 3px;
+  padding:10px;
+  margin: 10px;
+}
+
 .list-nostyle{
  list-style: none;
 }
-
-a{
-  text-decoration: none;
+.border-top{
+  padding: 10px;
+  margin:10px;
+  border-top: solid 1px #d1d1d1;
 }

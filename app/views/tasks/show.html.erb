@@ -1,14 +1,17 @@
 <h1> Task : <%= @task.title %></h1>
 
-<h3> Detail :</h3>
-<p><%= @task.details %></p>
-<h3>Statut :</h3>
-<p><%= @task_status %></p>
+<div class="wrapper-grey">
+  <h3> Detail :</h3>
+  <p><%= @task.details %></p>
+  <% if @task.completed == false %>
+    <li class="list-nostyle"><input type="checkbox" disabled="disabled"> This task is not complete yet </li>
+  <% else %>
+    <li class="list-nostyle"><input type="checkbox" checked="checked" disabled="disabled"> Completed </li>
+  <% end %>
+</div>
 
-
-<p><%= link_to 'Mettre à jour ma tache', task_edit_path %></p>
-
-
-
-<p><%= link_to 'Retour à ma liste de taches', tasks_path %></p>
-
+<div class="border-top">
+  <p><%= link_to 'Mettre à jour ma tache', edit_task_path, class: 'btn btn-primary' %></p>
+    <p><i class="fas fa-undo-alt"> <%= link_to 'Retour à ma liste de taches', tasks_path %></i></p>
+    <p><i class="fas fa-trash-alt"></i> <%= link_to "Supprimer la tache", task_path(@task.id), method: :delete, data: { confirm: "Are you sure?" }%> </p>
+</div>
