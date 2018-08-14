@@ -1,0 +1,14 @@
+<h1> Task : <%= @task.title %></h1>
+
+<h3> Detail :</h3>
+<p><%= @task.details %></p>
+<h3>Statut :</h3>
+<p><%= @task_status %></p>
+
+
+<p><%= link_to 'Mettre à jour ma tache', task_edit_path %></p>
+
+
+
+<p><%= link_to 'Retour à ma liste de taches', tasks_path %></p>
+
